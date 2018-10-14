@@ -18,6 +18,10 @@ recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function startRecording() {
     console.log("recordButton clicked");
 
@@ -97,6 +101,9 @@ function pauseRecording(){
 function stopRecording() {
     console.log("stopButton clicked");
     app.ready = true;
+    app.em = getRandomInt(0,7);
+    app.yn = getRandomInt(1,5);
+    app.lk = getRandomInt(0,3)
 
     //disable the stop button, enable the record too allow for new recordings
     stopButton.disabled = true;
